@@ -1,0 +1,26 @@
+.topnav{
+    position: fixed;
+    display: block;
+    height: 70px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border: 1px solid #eeeeee;
+}
+.topnav .log{
+    height: 40px;
+    vertical-align: middle;
+}
+.topnav ul{
+    width:100%;
+}
+.topnav ul li{
+    height: 70px;
+    width: 20%;
+    float: left;
+    line-height: 70px;
+    vertical-align: middle;
+}
+.topnav ul li a:hover{
+    color: deepskyblue;
+}
