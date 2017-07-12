@@ -10,45 +10,25 @@
     <meta name="description" content="bootstrap建站，专业分享各类前端后台技术，主要是前台技术，后台开发主讲java，数据库主讲oracle，有时也会讲到mysql，旨在互相学习交流，作品展示">
     <meta name="author" content="ctbumyq">
     <link rel="stylesheet" TYPE="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" TYPE="text/css" href="css/style.css">
     <link rel="stylesheet" TYPE="text/css" href="css/head.css">
     <link rel="stylesheet" TYPE="text/css" href="css/main.css">
-    <link rel="stylesheet" TYPE="text/css" href="css/.css">
+    <link rel="stylesheet" TYPE="text/css" href="css/foot.css">
     <title>牟一全的个人网站</title>
-    <style type="text/css">
-        *{
-            padding: 0;
-            margin: 0;
-        }
-        body{
-            text-align: center;
-        }
-        ul{
-            list-style: none;
-        }
-        a{
-            color: #fff;
-        }
-        img{
-            margin-top: 10px;
-            display: block;
-            width:172px;
-            height: 40px;
-        }
-    </style>
 </head>
-<body >
+<body id="top">
     <!--start头部-->
     <head>
         <!--固定宽度并支持响应式布局的容器(container)。-->
         <div class="container">
             <div class="topnav">
-                <div class="row">
+                <div id="nav" class="row">
                     <div class="col-md-6 log">
                         <img src="imgs/logo.svg" alt="logo.svg">
                     </div>
                     <div class="col-md-6">
-                        <ul>
-                            <li><a href="#home">HOME</a></li>
+                        <ul class="ul-list">
+                            <li><a href="#top">HOME</a></li>
                             <li><a href="#about">ABOUT</a></li>
                             <li><a href="#press">PRESS</a></li>
                             <li><a href="#contact">CONTACT</a></li>
@@ -62,7 +42,7 @@
     <!--end 头部-->
     <!--start 主模块-->
     <main>
-        <div class="home">
+        <div id="home" class="home">
             <ul>
                 <li style="background-image: url('imgs/1.jpg')"></li>
                 <li style="background-image: url('imgs/2.jpg')"></li>
@@ -84,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="about">
+        <div id="about" class="about">
             <h6>I Am A Boy Of Ctbu</h6>
             <h1>WHO I AM<strong style="font-size: 50px;color: deepskyblue;">. </strong></h1>
             <p>
@@ -96,7 +76,7 @@
                 Love technology,love communication,never stop.
             </p>
         </div>
-        <div class="press">
+        <div id="press" class="press">
             <h6>Some Demo Of The Project.</h6>
             <h1>Press<strong style="font-size: 50px;color: deepskyblue;">. </strong></h1>
             <div class="flex-box">
@@ -111,24 +91,48 @@
                 <div class="flex-item"><img src="imgs/1.jpg" alt=""/></div>
             </div>
         </div>
-        <div class="contact">
+        <div id="contact" class="contact">
             <h6>You Can Contact Me Like This.</h6>
             <h1>Contact<strong style="font-size: 50px;color: deepskyblue;">. </strong></h1>
             <h5>github:ctbumyq</h5>
             <h5>gmail:ctubmyq@gmail.com</h5>
             <h5>qqEmail:84210278@qq.com</h5>
         </div>
-        <div class="foot"></div>
+        <div id="foot" class="foot"></div>
     </main>
     <!--end 主模块-->
     <!--start尾部-->
     <footer>
-        <p>1</p>
-        <p>2</p>
+        <p>&copy2017.7.11 By Ctbumyq</p>
     </footer>
     <!--end 尾部-->
-    <!-- 导入js库 -->
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--js模块-->
+    <script type="text/javascript">
+        window.onload = function () {
+            //获取对象区域
+            var nav = document.getElementById('nav');
+
+            <!--对导航条的滚动监听-->
+            window.addEventListener('scroll',winScroll);
+            function winScroll(e) {
+                //拿到滚动条离顶部的长度
+                var length = document.documentElement.scrollTop || document.body.scrollTop;
+                //拿到e之后进行你需要的处理
+                console.log(length);
+                if(length>560){
+                    nav.style.color = '#000';
+                    nav.style.backgroundColor = '#fff';
+                    nav.style.borderBottom = '1px solid #e1e1e1';
+                }else {
+                    nav.style.color = '#fff';
+                    nav.style.backgroundColor = '';
+                    nav.style.borderBottom = '';
+                }
+                if (560<length<902){
+
+                }
+            }
+        }
+    </script>
 </body>
 </html>

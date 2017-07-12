@@ -3,6 +3,7 @@
     display: block;
     height: 70px;
     width: 100%;
+    color: #fff;
     left: 0;
     top: 0;
     z-index: 2;
@@ -19,8 +20,12 @@
     width: 20%;
     float: left;
     line-height: 70px;
+    color: inherit;
     vertical-align: middle;
 }
 .topnav ul li a:hover{
     color: deepskyblue;
+}
+.topnav .ul-list a{
+    color: inherit;
 }
