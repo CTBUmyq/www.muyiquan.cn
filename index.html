@@ -111,26 +111,44 @@
         window.onload = function () {
             //获取对象区域
             var nav = document.getElementById('nav');
-
+            console.log(nav);
+            var aList = nav.getElementsByTagName('a');
+            console.log(aList);
             <!--对导航条的滚动监听-->
             window.addEventListener('scroll',winScroll);
+            function  changeColor(index) {
+                   for(var i=0; i<aList.length;i++) {
+                    aList[i].style.color = '';
+                    }
+                    aList[index].style.color = '#4091ef';
+            }
             function winScroll(e) {
                 //拿到滚动条离顶部的长度
                 var length = document.documentElement.scrollTop || document.body.scrollTop;
                 //拿到e之后进行你需要的处理
                 console.log(length);
-                if(length>560){
+                if (length>558){
                     nav.style.color = '#000';
                     nav.style.backgroundColor = '#fff';
                     nav.style.borderBottom = '1px solid #e1e1e1';
-                }else {
+                }
+                if(length<558){
                     nav.style.color = '#fff';
+                    changeColor(0);
                     nav.style.backgroundColor = '';
                     nav.style.borderBottom = '';
+                }else if (length<946){
+                   // about
+                    changeColor(1)
+                }else if(length<1614){
+                    //press
+                    changeColor(2);
+                    console.log('press');
+                }else {
+                    //contact
+                    changeColor(3)
                 }
-                if (560<length<902){
 
-                }
             }
         }
     </script>
