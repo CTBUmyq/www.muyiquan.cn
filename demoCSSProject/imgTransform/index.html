@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>鼠标划过图片的特效</title>
+		<style type="text/css">
+			.main {
+				width: 1100px;
+				margin: 100px auto;
+			}
+			
+			.course-list-img {
+				width: 240px;
+				height: 350px;
+				overflow: hidden;
+				float: left;
+				margin: 10px;
+			}
+			
+			.course-list-img img {
+				display: block;
+				-webkit-transition: 1s;
+				transition: 1s;
+			}
+			
+			.course-list-img .img_1:hover {
+				-webkit-transform: scale(0.8, 1.2);
+				-moz-transition: scale(0.8, 1.2);
+			}
+			
+			.course-list-img .img_2:hover {
+				-webkit-transform: scale(0.5);
+				-moz-transform: scale(0.5);
+			}
+			
+			.course-list-img .img_3:hover {
+				-webkit-transform: scale(-1.2, 1.2);
+				-moz-transform: scale(-1.2, 1.2);
+			}
+			
+			.course-list-img .img_4:hover {
+				-webkit-transform: scale(1.2);
+				-moz-transform: scale(1.2);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="course-list-img">
+				<img class="img_1" src="img/transform.png" width="255" height="300">
+			</div>
+			<div class="course-list-img">
+				<img class="img_2" src="img/transform.png" width="255" height="300">
+			</div>
+			<div class="course-list-img">
+				<img class="img_3" src="img/transform.png" width="255" height="300">
+			</div>
+			<div class="course-list-img">
+				<img class="img_4" src="img/transform.png" width="255" height="300">
+			</div>
+
+		</div>
+	</body>
+
+</html>
