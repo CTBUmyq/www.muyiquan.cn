@@ -82,17 +82,18 @@
         <div class="press">
             <h6>Some Demo Of The Project.</h6>
             <h1>Press<strong style="font-size: 50px;color: deepskyblue;">. </strong></h1>
-            <div class="flex-box">
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" alt=""/></a></div>
+            <div id="flexBox" class="flex-box">
+                <div class="flex-item"><a href="demoCSSProject/taiji/"><img src="imgs/taiji.png" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
+                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
             </div>
         </div>
         <div id="contact"></div>
@@ -115,11 +116,10 @@
     <script type="text/javascript">
         window.onload = function () {
             //获取对象区域
-            var nav = document.getElementById('nav');
-            console.log(nav);
-            var aList = nav.getElementsByTagName('a');
-            console.log(aList);
-            <!--对导航条的滚动监听-->
+            var nav = document.getElementById('nav'); //获取导航栏
+            var aList = nav.getElementsByTagName('a'); //获取导航栏所有的li标签
+            
+            //对导航条的滚动监听
             window.addEventListener('scroll',winScroll);
             function  changeColor(index) {
                    for(var i=0; i<aList.length;i++) {
@@ -131,7 +131,6 @@
                 //拿到滚动条离顶部的长度
                 var length = document.documentElement.scrollTop || document.body.scrollTop;
                 //拿到e之后进行你需要的处理
-                console.log(length);
                 if (length>558){
                     nav.style.color = '#000';
                     nav.style.backgroundColor = '#fff';
@@ -148,14 +147,47 @@
                 }else if(length<1614){
                     //press
                     changeColor(2);
-                    console.log('press');
                 }else {
                     //contact
                     changeColor(3)
                 }
 
             }
+
         }
+        //图片的onchange事件
+		function imgChange(img){
+			var className = img.className;//获取原来的className；
+			className = className!=""?className+" ":className;//判断className是否为空
+			className += 'img-rotate';
+			img.className = className;
+			var objDiv = img.parentNode.lastChild; //获得文字节点
+			
+			setTimeout(function(){
+				objDiv.style.display = "block";
+			},1000);
+			
+		}
+		function removeClass(img){
+			var className = img.className;
+			var aStr = className.split(" ");
+			className = "";
+			for (var i = 0;i<aStr.length;i++) {
+				if(aStr[i]=="img-rotate"){
+					aStr[i] = "";
+				}
+				if (aStr[i]!="") {
+					className =className+" "+aStr[i];
+				}
+			}
+			console.log(className);
+			img.className = className;
+			
+			var objDiv = img.parentNode.lastChild; //获得文字节点
+			setTimeout(function(){
+				objDiv.style.display = "none";
+			},1000);
+		}
     </script>
 </body>
 </html>
