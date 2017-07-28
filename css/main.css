@@ -92,7 +92,7 @@
 	transition: 1.5s linear; 
 	transform: scale(0.8);
 	-webkit-transform: scale(-1.2,1.2);
-	-moz-transform: scale(0.8);
+	-moz-transform: scale(-1.2,1.2);
 	filter: opacity(0.5);
 }
 .contact {
