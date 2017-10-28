@@ -43,23 +43,19 @@
     <!--start 主模块-->
     <main>
         <div id="home" class="home">
-            <ul>
-                <li style="background-image: url('imgs/1.jpg')"></li>
-                <li style="background-image: url('imgs/2.jpg')"></li>
-                <li style="background-image: url('imgs/3.jpg')"></li>
-            </ul>
-            <div class="preface col-md-10 col-xl-10 text-center">
-                <h1>Ctbumyq</h1>
-                <h3>Most afraid of life inaction</h3>
-                <h3>Also said that ordinary is valuable</h3>
-                <div class="button col-md-12 col-xl-12">
-                    <div class="row">
-                        <h3 class=" col-md-16 col-xl-6">
-                            <a href="">加入我们</a>
-                        </h3>
-                        <h3 class="col-md-6 col-xl-6">
-                            <a href="">联系我们</a>
-                        </h3>
+            <img id="perfaceImg" src="imgs/3.jpg" alt="">
+            <div class="row">
+                <div id="perface" class="preface col-md-10 col-xs-10 offset-md-1 offset-xs-1  text-center">
+                    <h1>Ctbumyq</h1>
+                    <h3>Most afraid of life inaction</h3>
+                    <h3>Also said that ordinary is valuable</h3>
+                    <div class="join-us">
+                        <div class="">
+                            <a href=""><p class="text-center">加入我们</p></a>
+                        </div>
+                        <div class="">
+                            <a href=""><p class="text-center">联系我们</p></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,81 +109,7 @@
     </footer>
     <!--end 尾部-->
     <!--js模块-->
-    <script type="text/javascript">
-        window.onload = function () {
-            //获取对象区域
-            var nav = document.getElementById('nav'); //获取导航栏
-            var aList = nav.getElementsByTagName('a'); //获取导航栏所有的li标签
-            
-            //对导航条的滚动监听
-            window.addEventListener('scroll',winScroll);
-            function  changeColor(index) {
-                   for(var i=0; i<aList.length;i++) {
-                    aList[i].style.color = '';
-                    }
-                    aList[index].style.color = '#4091ef';
-            }
-            function winScroll(e) {
-                //拿到滚动条离顶部的长度
-                var length = document.documentElement.scrollTop || document.body.scrollTop;
-                //拿到e之后进行你需要的处理
-                if (length>558){
-                    nav.style.color = '#000';
-                    nav.style.backgroundColor = '#fff';
-                    nav.style.borderBottom = '1px solid #e1e1e1';
-                }
-                if(length<558){
-                    nav.style.color = '#fff';
-                    changeColor(0);
-                    nav.style.backgroundColor = '';
-                    nav.style.borderBottom = '';
-                }else if (length<946){
-                   // about
-                    changeColor(1)
-                }else if(length<1614){
-                    //press
-                    changeColor(2);
-                }else {
-                    //contact
-                    changeColor(3)
-                }
-
-            }
-
-        }
-        //图片的onchange事件
-		function imgChange(img){
-			var className = img.className;//获取原来的className；
-			className = className!=""?className+" ":className;//判断className是否为空
-			className += 'img-rotate';
-			img.className = className;
-			var objDiv = img.parentNode.lastChild; //获得文字节点
-			
-			setTimeout(function(){
-				objDiv.style.display = "block";
-			},1000);
-			
-		}
-		function removeClass(img){
-			var className = img.className;
-			var aStr = className.split(" ");
-			className = "";
-			for (var i = 0;i<aStr.length;i++) {
-				if(aStr[i]=="img-rotate"){
-					aStr[i] = "";
-				}
-				if (aStr[i]!="") {
-					className =className+" "+aStr[i];
-				}
-			}
-			console.log(className);
-			img.className = className;
-			
-			var objDiv = img.parentNode.lastChild; //获得文字节点
-			setTimeout(function(){
-				objDiv.style.display = "none";
-			},1000);
-		}
-    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

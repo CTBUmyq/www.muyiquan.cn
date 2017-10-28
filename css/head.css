@@ -11,6 +11,10 @@
 .topnav .log{
     height: 40px;
     vertical-align: middle;
+    margin-top: 10px;
+}
+.topnav .log img{
+    width: 20%;
 }
 .topnav ul{
     width:100%;
