@@ -3,28 +3,22 @@
     top: 0;
     display: block;
     text-align: center;
-    background-size: 100%;
-    filter: opacity(0.8)   drop-shadow(5px 5px 5px #323232);
-    overflow: hidden;
 }
-.home img{
+.home canvas{
     width: 100%;
     height: 100%;
 }
 .home .preface{
     position: absolute;
-    left: 0;
     display: block;
     color: #fff;
     filter: brightness(2.0) contrast(2);
 }
 .home .preface a{
     display: block;
-    line-height: 50px;
 }
-.home .preface a:hover{
-    background-color: #4091ef;
-    border-radius: 25px;
+.home .preface a p{
+    padding: 10px;
 }
 .home .preface .join-us{
     width: 100%;

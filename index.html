@@ -9,41 +9,65 @@
     <meta name="keywords" content="blog,个人网站，作品展示，幽默风趣，前端，后端，数据库，linux,oracle,bootstrap,jquery,javascript,css3,html">
     <meta name="description" content="bootstrap建站，专业分享各类前端后台技术，主要是前台技术，后台开发主讲java，数据库主讲oracle，有时也会讲到mysql，旨在互相学习交流，作品展示">
     <meta name="author" content="ctbumyq">
-    <link rel="stylesheet" TYPE="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" TYPE="text/css" href="css/style.css">
-    <link rel="stylesheet" TYPE="text/css" href="css/head.css">
     <link rel="stylesheet" TYPE="text/css" href="css/main.css">
     <link rel="stylesheet" TYPE="text/css" href="css/foot.css">
     <title>牟一全的个人网站</title>
 </head>
 <body id="top">
     <!--start头部-->
-    <head>
-        <!--固定宽度并支持响应式布局的容器(container)。-->
-        <div class="container">
-            <div class="topnav">
-                <div id="nav" class="row">
-                    <div class="col-md-6 log">
-                        <img src="imgs/logo.svg" alt="logo.svg">
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="ul-list">
-                            <li><a href="#top">HOME</a></li>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#press">PRESS</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                            <li><a href="http://ctbumyq.github.io">BLOG</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            　<!-- .navbar-toggle样式用于toggle收缩的内容，即nav-collapse collapse样式所在元素 -->
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- 确保无论是宽屏还是窄屏，navbar-brand都显示 -->
+            <a href="##" class="navbar-brand"><img id="ctbumyq" src="imgs/ctbumyq.png" alt=""></a>
         </div>
-    </head>
+        <!-- 屏幕宽度小于768px时，div.navbar-responsive-collapse容器里的内容都会隐藏，显示icon-bar图标，当点击icon-bar图标时，再展开。屏幕大于768px时，默认显示。 -->
+        <div  class="collapse navbar-collapse navbar-responsive-collapse  navbar-right">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#top">Top</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#press">Press</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">特点 <span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                        <!--<li><a href="#" >Chrome</a></li>-->
+                        <!--<li><a href="#" >Firefox</a></li>-->
+                        <!--<li><a href="#" >Safari</a></li>-->
+                        <!--<li><a href="#" >Opera</a></li>-->
+                        <!--<li><a href="#" >IE</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <li><a href="https://ctbumyq.github.io">Blog</a></li>
+                <li>
+                    <form class="narbar-form" role="search">
+                            <div class="form-group search-center-block">
+                                <input type="text" placeholder="搜索" class="form-control">
+                                <span id="search" class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                            </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    </div>
     <!--end 头部-->
     <!--start 主模块-->
     <main>
         <div id="home" class="home">
-            <img id="perfaceImg" src="imgs/3.jpg" alt="">
+            <canvas id="canvas"></canvas>
+            <div class="contianer">
             <div class="row">
                 <div id="perface" class="preface col-md-10 col-xs-10 offset-md-1 offset-xs-1  text-center">
                     <h1>Ctbumyq</h1>
@@ -51,13 +75,14 @@
                     <h3>Also said that ordinary is valuable</h3>
                     <div class="join-us">
                         <div class="">
-                            <a href=""><p class="text-center">加入我们</p></a>
+                            <a href=""><p class="text-center font-size-auto">加入我们</p></a>
                         </div>
                         <div class="">
-                            <a href=""><p class="text-center">联系我们</p></a>
+                            <a href="#contact"><p class="text-center font-size-auto">联系我们</p></a>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
         <div id="about"></div>
@@ -83,13 +108,6 @@
                 <div class="flex-item"><a href="demoCSSProject/imgTransform/"><img src="imgs/transform.png" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">图片的简单Transform特效</div></a></div>
                 <div class="flex-item"><a href="demoCSSProject/jsDrag/"><img src="imgs/jsDrag.png" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">原生js拖拽</div></a></div>
                 <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
-                <div class="flex-item"><a href=""><img src="imgs/1.jpg" onmouseover="imgChange(this);" onmouseleave="removeClass(this);" alt=""/><div class="img-msg">CSS3绘制太极图</div></a></div>
             </div>
         </div>
         <div id="contact"></div>
@@ -110,6 +128,9 @@
     <!--end 尾部-->
     <!--js模块-->
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/starSky.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+
 </body>
 </html>

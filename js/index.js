@@ -1,7 +1,4 @@
 window.onload = function () {
-    //获取对象区域
-    var nav = document.getElementById('nav'); //获取导航栏
-    var aList = nav.getElementsByTagName('a'); //获取导航栏所有的li标签
 
     //对导航条的滚动监听
     window.addEventListener('scroll',winScroll);
@@ -73,13 +70,21 @@ function removeClass(img){
     },1000);
 }
 (function(){
+    //控制元素位置模块开始
+    var propertion = window.innerWidth/1920;
     var $perface = $("#perface");
-    var $perfaceImg =$("#perfaceImg");
+    var $perfaceImg =$("#canvas");
     var perfaceHeight = $perface.height();
     var perfaceImgHeight = $perfaceImg.height();
+    var $fontSizeAuto = $(".font-size-auto");   //设置join us连接文字的大小
+    for(var i=0;i<$fontSizeAuto.length;i++){
+        $fontSizeAuto[i].style.fontSize = 30*propertion+"px";
+    }
     if(perfaceHeight-perfaceImgHeight>0){
         $perface.css("marginTop",-(perfaceHeight-(perfaceHeight-perfaceImgHeight)/2));
     }else {
         $perface.css("marginTop",-(perfaceImgHeight-(perfaceImgHeight-perfaceHeight)/2));
     }
+    $perface.css("marginLeft",($perfaceImg.width()-$perface.width())/2);
+    //控制元素位置模块结束
 })();

@@ -5,16 +5,53 @@
 body{
     text-align: center;
     position: relative;
+    padding-top: 50px;
 }
 ul{
     list-style: none;
 }
-a{
+a,a:hover,a:link,a:visited{
     color: #fff;
     text-decoration: none;
+    outline: none;
+    border: 0;
+}
+a:link{
+    color: #2aabd2;
 }
 img{
     display: block;
     width:172px;
     height: 40px;
+}
+#ctbumyq{
+    margin-top: -14px;
+    margin-left: 0px;
+    width: 150px;
+}
+#search{
+    position: relative;
+    top:-25px;
+    margin-left: 115px;
+}
+.search-center-block{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: -14px
+}
+.search-center-block input{
+    max-width: 150px;
+    margin-left: calc(100%/2 - 150px/2);
+}
+@media screen and (max-width: 550px) {
+    h3{
+        margin: 0;
+        font-size: 14px!important;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    #ctbumyq{
+        width: 100px;
+    }
 }
